@@ -44,5 +44,3 @@ void UpdateAccountType(string newAccountType) - Frissíti a bankszámla típusá
 5. Készítsd el a szükséges kimeneti üzeneteket, hogy a felhasználó könnyen követhesse az alkalmazás működését.
 6. Győződj meg róla, hogy az osztályok és metódusok helyesen működnek, és a kimeneti üzenetek tartalmazzák az elvárt információkat.
 7. Teszteld az alkalmazást a különböző műveletek végrehajtásával, és győződj meg róla, hogy az eredmények helyesek és az alkalmazás megfelel a követelményeknek.
-
-Töltsd fel az elkészült kódot egy verziókezelő rendszerbe. (GIT)
