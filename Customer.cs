@@ -56,6 +56,7 @@ namespace oop
          else
             this.customerOrderHistory.Add(product, quantity);
          Console.WriteLine("Order placed for " + quantity + " " + product + "s");
+         Console.WriteLine();
       }
 
       public void RequestSupport(string supportRequest)
