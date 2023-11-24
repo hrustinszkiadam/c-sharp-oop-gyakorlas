@@ -40,7 +40,14 @@ namespace oop
 
       public void CloseAccount()
       {
-         this.isAccountActive = false;
+         if(this.isAccountActive)
+         {
+            this.isAccountActive = false;
+            Console.WriteLine($"Successfully closed {this.ownerName}'s account.\n");
+         } else
+         {
+            Console.WriteLine($"Account is already closed. Cannot close {this.ownerName}'s account.\n");
+         }
       }
 
       public void TransferFundsTo(BankAccount destinationAccount, decimal amount)
