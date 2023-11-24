@@ -45,15 +45,29 @@ namespace oop
 
       public void TransferFundsTo(BankAccount destinationAccount, decimal amount)
       {
-         if (this.balance >= amount)
+         if(this.isAccountActive)
          {
-            this.balance -= amount;
-            destinationAccount.balance += amount;
-            Console.WriteLine($"Transfer for {amount} successful from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
-         }
-         else
+            if(destinationAccount.isAccountActive)
+            {
+               if(this.balance >= amount)
+               {
+                  this.balance -= amount;
+                  destinationAccount.balance += amount;
+                  Console.WriteLine($"Successfully transferred {amount} from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
+               } else
+               {
+                  Console.WriteLine($"Insufficient funds in {this.ownerName}'s account. Cannot transfer {amount} to {destinationAccount.ownerName}'s account.\n");
+               }
+            } else
+            {
+               Console.WriteLine($"Destination account is inactive. Cannot transfer funds from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
+            }
+         } else if(!destinationAccount.isAccountActive)
          {
-            Console.WriteLine($"Insufficient funds to transfer {amount} from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
+            Console.WriteLine($"Both accounts are inactive. Cannot transfer funds from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
+         } else
+         {
+            Console.WriteLine($"Account is inactive. Cannot transfer funds from {this.ownerName}'s to {destinationAccount.ownerName}'s account.\n");
          }
       }
 

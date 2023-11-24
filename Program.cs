@@ -23,7 +23,7 @@ namespace oop
          #endregion
 
          #region BankAccount
-         BankAccount peteAccount = new BankAccount("Pete", 1000, "123456789", "Golden", "2021-01-01");
+         BankAccount peteAccount = new BankAccount("Pete", 1500, "123456789", "Golden", "2021-01-01");
          BankAccount georgeAccount = new BankAccount("George", 500, "123456788", "Golden", "2020-12-31");
          peteAccount.PrintAccountInfo();
          georgeAccount.PrintAccountInfo();
@@ -33,6 +33,8 @@ namespace oop
          georgeAccount.PrintAccountInfo();
          peteAccount.CloseAccount();
          peteAccount.PrintAccountInfo();
+         georgeAccount.CloseAccount();
+         peteAccount.TransferFundsTo(georgeAccount, peteAccount.balance);
          #endregion
 
          Console.ReadKey();
